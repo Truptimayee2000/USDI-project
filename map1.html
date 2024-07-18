@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tiled WMS</title>
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.2/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.2/dist/ol.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@4.1.1/dist/ol-layerswitcher.css" />
+</head>
+
+<body>
+    <div id="map" class="map"></div>
+    <button id="closeMapButton" class="close-button">Close</button>
+
+    <script src="https://unpkg.com/ol-layerswitcher@4.1.1"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const catalogueId = urlParams.get('catalogueId');
+            const tableName = urlParams.get('tableName');
+
+            // Log the parameters for debugging
+            console.log('Catalogue ID:', catalogueId);
+            console.log('Table Name:', tableName);
+
+            // Declare map variable in the broader scope
+            var map;
+
+            // Fetch the specific data and initialize the map
+            function initMap() {
+                var layers = [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM(),
+                    }),
+                    new ol.layer.Tile({
+                        source: new ol.source.TileWMS({
+                            url: 'http://localhost:8081/geoserver/usdi/wms',
+                            params: { 'LAYERS': tableName, 'TILED': true },
+                            serverType: 'geoserver',
+                            transition: 0,
+                        }),
+                    }),
+                ];
+
+                map = new ol.Map({
+                    layers: layers,
+                    target: 'map',
+                    view: new ol.View({
+                        projection: 'EPSG:4326',
+                        center: [85.58580017089844, 20.140094757080078],
+                        zoom: 8
+                    })
+                });
+
+                var mousePosition = new ol.control.MousePosition({
+                    className: 'mousePosition',
+                    projection: 'EPSG:4326',
+                    coordinateFormat: function (coordinate) { return ol.coordinate.format(coordinate, '{y} , {x}', 6); }
+                });
+
+                map.addControl(mousePosition);
+
+                var scaleControl = new ol.control.ScaleLine({
+                    bar: true,
+                    text: true,
+                });
+
+                map.addControl(scaleControl);
+
+                var fullScreen = new ol.control.FullScreen();
+
+                map.addControl(fullScreen);
+
+                var slider = new ol.control.ZoomSlider();
+                map.addControl(slider);
+            }
+
+            initMap();
+
+            var user_role = localStorage.getItem('user_role');
+            if (!user_role) {
+                console.error('User role is not defined');
+                return;
+            }
+
+            document.getElementById('closeMapButton').addEventListener('click', function () {
+                switch (user_role) {
+                    case 'admin':
+                        console.log('Admin user - map will be hidden');
+                        document.getElementById('map').style.display = 'none';
+                        window.location.href = 'catalogue_management.html';
+                        break;
+                    case 'citizen':
+                        console.log('Citizen user - map will be hidden');
+                        document.getElementById('map').style.display = 'none';
+                        window.location.href = 'p_catalogue.html';
+                        break;
+                    default:
+                        console.log('Unknown user role');
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

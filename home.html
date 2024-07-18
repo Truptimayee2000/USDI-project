@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+<head>
+     <title>Home</title>
+     <link rel="stylesheet" href="home.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<header id="h_id"></header>
+<body>
+    <section id="hero" class="slide">
+        <div class="carousel">
+            <div class="carousel-item active">
+                <img src="photos/pic5.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="photos/pic3.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="photos/pic2.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="photos/images (1).jpeg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="photos/img1.jpeg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="photos/pic.jpg" alt="">
+            </div>
+        </div>
+        <div class="carousel-nav">
+            <span class="carousel-dot active" onclick="setSlide(0)"></span>
+            <span class="carousel-dot" onclick="setSlide(1)"></span>
+            <span class="carousel-dot" onclick="setSlide(2)"></span>
+            <span class="carousel-dot" onclick="setSlide(3)"></span>
+            <span class="carousel-dot" onclick="setSlide(4)"></span>
+            <span class="carousel-dot" onclick="setSlide(5)"></span>
+        </div>
+    </section>
+     <div class="content">
+        <nav class="nav2">
+             <h2>WELCOME TO USDI</h2>
+        </nav>
+    </div>
+
+    <section class="ourservice" id="ourservice">
+        <div class="menu1">
+            <ul>
+                <li class="active" data-filter="*">Our Services</li>
+                <li data-filter=".map-catalogue">Map Catalogue</li>
+                <li data-filter=".map-services">Map Services</li>
+                <li data-filter=".spatial-analysis">Spatial Analysis</li>
+            </ul>
+        </div>
+        <div class="item1">
+            <div class="item map-catalogue">
+                <img src="photos/mapc.png" width="50" height="50">
+            </div>
+            <div class="item map-services">
+                <img src="photos/raw.jpeg" width="50" height="50">
+            </div>
+            <div class="item spatial-analysis">
+                <img src="photos/GIS_Analysis2.jpg" width="50" height="50">
+            </div>
+        </div>
+    </section>
+    <!-- <section class="aboutus">
+        <div class="about" id="about">
+            <h1>ABOUT <span>US</span></h1>
+            <p>Welcome to our Urban Spatial Data Infrastructure (USDI)! We're dedicated to revolutionizing the way cities manage and utilize their spatial data. At USDI, we understand the critical role that data plays in urban planning, development, and decision-making. Our team is committed to providing cutting-edge solutions that empower cities to harness the power of spatial data for sustainable growth, improved infrastructure, and enhanced quality of life for residents. With our expertise and innovative technologies, we strive to build smarter, more connected urban environments for the future. Join us on our journey to unlock the full potential of urban spatial data.</p>
+        </div>
+        <div class="feedback">
+            <h1>FEEDBACK</h1>
+            <label>
+                <div class="feed"><input type="text" placeholder="Enter your name"></div>
+                <div class="feed"><input type="text" placeholder="Enter your mobile number"></div>
+                <div class="feed"><input type="text" placeholder="Enter your email id"></div>
+                <div class="feed"><input type="text" placeholder="Feedback"><div>
+                <div class="feed"><button type="submit">Submit</button></div>
+            </label>
+        </div>
+    </section> -->
+    <footer id="f_id"></footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="home.js"></script>
+</html>

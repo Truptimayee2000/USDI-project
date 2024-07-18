@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="logoutheader.css">
+</head>
+
+<header>
+    <nav class="nav1" id="nav1">
+        <div class="logo" id="logo">
+            <img src="photos/USDI_transparent.png" alt="USDI_transparent" width="150" height="80">
+        </div>
+        <div class="signout">
+            <a id="logout">Logout</a>
+        </div>
+    </nav>
+</header>
+
+<body style="background-color: antiquewhite;">
+    <div class="container d-flex" style="justify-content: center;">
+        <div class="row" style="width: 900px;">
+            <div class="col-md-12">
+                <div class="user p-3"
+                    style="margin-top: 20%; background-color: rgba(235, 208, 170, 0.342); border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);">
+                    <h2>
+                        <b>Manage Metadata</b>
+                        <button id="addMetadata" class="btn btn-success float-right"
+                            style="font-weight: bold; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);">Add Metadata</button>
+                        <button class="btn btn-danger float-right" id="close"
+                            style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); margin-right: 5px; font-weight: bold;">Close</button>
+                    </h2>
+                    <div class="input-group mb-3" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search Metadata"
+                            aria-label="Search Users" aria-describedby="searchButton">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="searchButton"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <table id="metadataTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sl No.</th>
+                                <th>Dataset Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="metadataTableBody">
+                            <!-- Table rows will be populated dynamically using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Metadata Modal -->
+    <div class="modal fade" id="addMetadataModal" tabindex="-1" role="dialog" aria-labelledby="addMetadataModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMetadataModalLabel">Add Metadata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add Metadata Form -->
+                    <form id="addMetadataForm">
+                        <div class="form-group">
+                            <label for="dataset_name">Dataset Name:</label>
+                            <select class="form-control" id="dataset_name" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data_source">Data Source</label>
+                            <input type="text" class="form-control" id="data_source" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="data_format">Data Format</label>
+                            <input type="text" class="form-control" id="data_format" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Metadata</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Metadata Modal -->
+    <div class="modal fade" id="editMetadataModal" tabindex="-1" role="dialog" aria-labelledby="editMetadataModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editMetadataModalLabel">Edit Metadata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Edit Metadata Form -->
+                    <form id="editMetadataForm">
+
+                        <div class="form-group">
+                            <label for="editDatasetName">Dataset Name</label>
+                            <input type="text" class="form-control" id="editDatasetName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="editDatasource">Data Source</label>
+                            <input type="text" class="form-control" id="editDatasource" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editDataformat">Data Format</label>
+                            <input type="text" class="form-control" id="editDataformat" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Metadata Modal -->
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <h3 class="modal-title">Urban Spatial Data Infrastructure</h3>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="viewModalLabel">Urban Spatial Data Infrastructure</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="metadataDetails">
+                    <!-- Metadata details will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="admin_metadata.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
