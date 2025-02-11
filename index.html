@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to USDI</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div><a href="usdi1/home.html">Welcome To USDI</a></div>
+
+    <script>
+        // Redirect the user when they click anywhere on the body
+        document.body.addEventListener('click', function() {
+            window.location.replace('usdi1/home.html');  // Redirect to home.html and replace the current page in history
+        });
+        
+        // Optional: If you want to detect a touch event specifically (for mobile users), 
+        // you can also add a listener for touchstart like this:
+        document.body.addEventListener('touchstart', function() {
+            window.location.replace('usdi1/home.html');  // Redirect to home.html and replace the current page in history
+        });
+    </script>
+</body>
+</html>

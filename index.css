@@ -1,0 +1,105 @@
+/* Reset default styles and set a consistent box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page layout using flexbox to center the content */
+body {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-image: url('usdi1/photos/earth.jpg');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeInBackground 2s ease-out, zoomIn 2s ease-out 1s; /* Background fade-in and zoom-in effect */
+}
+
+/* Fade-in animation for background */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Zoom-in effect for body */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.95); /* Start zoomed out */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* End visible */
+    }
+}
+
+/* Style the main div */
+div {
+    text-align: center;
+    padding: 40px 60px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out 0.5s forwards; /* Text fade-in animation */
+}
+
+/* Fade-in animation for text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Slide in from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Style the link inside the div */
+a {
+    text-decoration: none;
+    font-size: 2.5rem; /* Larger font size for prominence */
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Slightly spaced letters */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+/* Hover effect for the link */
+a:hover {
+    color: #ff8c00; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly grow the text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    div {
+        padding: 30px 50px;
+    }
+
+    a {
+        font-size: 2rem; /* Slightly smaller font size on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    div {
+        padding: 20px 30px;
+    }
+
+    a {
+        font-size: 1.8rem; /* Even smaller font size on very small screens */
+    }
+}
