@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Urban Spatial Data Infrastructure (USDI)</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        .container {
+            margin-top: 50px;
+        }
+        .about-paragraph {
+            text-align: justify;
+        }
+    </style>
+</head>
+<header id="h_id"></header>
+<body style="background-color: antiquewhite;">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4 style="font-weight: bold;  font-family: Georgia, 'Times New Roman', Times, serif;">About Urban Spatial Data Infrastructure (USDI)</h4>
+                <div class="about-paragraph" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                    <p>Urban Spatial Data Infrastructure (USDI) is a comprehensive system designed to manage, analyze, and disseminate spatial data related to urban areas. At USDI, we aim to provide stakeholders with accurate, up-to-date, and easily accessible spatial information to support informed decision-making processes.</p>
+                    <p>Our infrastructure integrates various data sources, including satellite imagery, aerial photographs, GIS datasets, and demographic data, to create a comprehensive understanding of urban environments. Through advanced spatial analysis techniques, we identify trends, patterns, and insights that enable urban planners, policymakers, and researchers to address complex challenges such as urban growth, transportation planning, environmental management, and social equity.</p>
+                    <h4 style="font-weight: bold;  font-family: Georgia, 'Times New Roman', Times, serif;">Components of USDI</h4>
+                    <ul>
+                        <li><strong>Data Integration:</strong> We aggregate diverse datasets from multiple sources to create a unified spatial database.</li>
+                        <li><strong>Geospatial Analysis:</strong> Our team utilizes advanced GIS techniques to analyze spatial relationships and derive meaningful insights.</li>
+                        <li><strong>Visualization:</strong> We develop interactive maps, dashboards, and visualizations to communicate spatial information effectively.</li>
+                        <li><strong>Data Accessibility:</strong> We prioritize open data principles and strive to make spatial data accessible to all stakeholders through user-friendly platforms and APIs.</li>
+                        <li><strong>Collaboration:</strong> We foster collaboration among government agencies, academic institutions, non-profit organizations, and the private sector to enhance the usability and impact of spatial data.</li>
+                    </ul>
+                    <p>At USDI, we are committed to promoting sustainable urban development, improving quality of life, and fostering innovation through the use of spatial data and technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#h_id').load("header.html");
+    // $('#f_id').load("footer.html") 
+});
+</script>
+</html>

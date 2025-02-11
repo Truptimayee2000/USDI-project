@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: antiquewhite;
+}
+
+.container2 {
+  width: 100%;
+  height: 90vh;
+  background-color: rgb(255, 244, 229);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-content {
+  width: 100%;
+  max-width: 350px;
+  min-width: 250px;
+  padding: 35px;
+  background: rgba(235, 208, 170, 0.342);
+  padding: 15px 40px 15px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.container2 h2 {
+  font-size: 25px;
+  color: rgb(255, 11, 7);
+  text-align: center;
+}
+
+.form-group {
+  background: #eaeaea;
+  margin: 10px 0;
+  border-radius: 8px;
+  align-items: center;
+  padding: 5px 20px;
+  display: flex;
+  font-size: 15px;
+  border: 1px solid gray;
+
+}
+
+.form-group i {
+  color: gray;
+  margin-right: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 15px;
+  color: gray;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  display: flex;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p a {
+  text-decoration: none;
+  color: rgb(255, 11, 7);
+  font-weight: bold;
+}
+
+p a:hover {
+  color: rgb(34, 127, 139);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(255, 11, 7);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color: rgb(34, 127, 139);
+}
+

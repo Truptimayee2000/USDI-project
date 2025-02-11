@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container1{
+    width: 100%;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 244, 229);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+    padding: 35px;
+    background: rgba(235, 208, 170, 0.342);
+    padding: 15px 40px 15px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);  
+}
+
+form{
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+}
+
+.container1 h2 {
+    font-size: 30px;
+    color: rgb(255, 11, 7);
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    background: #eaeaea;
+    color: black;
+    margin: 10px 0;
+    border-radius: 8px;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    font-size: 15px;
+    border: 1px solid gray;
+}
+
+button {
+    width: 100%;
+    background-color: rgb(255, 11, 7);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+button:hover{
+    background: rgb(34, 127, 139);
+}
+
+
+.login-container p{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.login-container a {
+    margin-bottom: 15px;
+    padding: 10px;
+    color: rgb(255, 11, 7);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(34, 127, 139);
+}
+
